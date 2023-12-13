@@ -1,8 +1,12 @@
-import { Injectable } from '@angular/core';
+import {Injectable, NgModule} from '@angular/core';
 import {BehaviorSubject, map, Observable} from "rxjs";
+import {HttpClientModule} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
+})
+@NgModule({
+  imports: [HttpClientModule],
 })
 export class CardService {
   private cardKey = 'card';

@@ -1,0 +1,5 @@
+<br>
+<ul *ngFor="let category of categories" class="list-group">
+  <button [routerLink]="['/category',category]" class="btn ">    {{ category }}</button>
+  <hr>
+</ul>
