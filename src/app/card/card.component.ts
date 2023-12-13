@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {CardService} from "../card.service";
 import {ProductService} from "../product.service";
 import {RouterLink} from "@angular/router";
+import {CardLenghtComponent} from "../card-lenght/card-lenght.component";
 
 @Component({
   selector: 'app-card',
@@ -14,7 +15,8 @@ import {RouterLink} from "@angular/router";
 export class CardComponent implements OnInit{
   total: number=0
   cards: any
-  constructor(private CardService:CardService ,private ProductService:ProductService) {
+  constructor(private CardService:CardService) {
+
 }
 
   ngOnInit(): void {
@@ -23,7 +25,7 @@ export class CardComponent implements OnInit{
     this.cards.forEach((card:any)=>{
       this.total+=card.product.price*card.quantity
     })
-    console.log(this.total)
+
    }
   removeCard(id :number){
     this.CardService.removeToCard(id)
@@ -38,3 +40,4 @@ export class CardComponent implements OnInit{
 
 }
 
+//export class CardComponent implements OnInit{
